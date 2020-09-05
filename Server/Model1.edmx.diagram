@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8b0ec6e5eb974865aafbae2be438aad3" Name="Diagram1">
-        <EntityTypeShape EntityType="HBModel.Categories" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HBModel.Categories" Width="1.5" PointX="5.125" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="HBModel.FamilyMembers" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HBModel.Orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="HBModel.Users" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />

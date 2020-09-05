@@ -69,14 +69,15 @@
             // usersMenuItem
             // 
             this.usersMenuItem.Name = "usersMenuItem";
-            this.usersMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.usersMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usersMenuItem.Text = "Користувачі";
             // 
             // categoryMenuItem
             // 
             this.categoryMenuItem.Name = "categoryMenuItem";
-            this.categoryMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.categoryMenuItem.Size = new System.Drawing.Size(180, 22);
             this.categoryMenuItem.Text = "Категорії";
+            this.categoryMenuItem.Click += new System.EventHandler(this.categoryMenuItem_Click);
             // 
             // операціїToolStripMenuItem
             // 

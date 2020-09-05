@@ -16,12 +16,13 @@ namespace HB_Local_DB
      
 
         OrderForm curentOrder;
-        //new
+    
 
         //Singelton
         HomeBugaltery homeBugaltery = HomeBugaltery.getInstance();
 
         Users curentUser;
+        CategoryForm categoryForm;
 
         public Form1()
         {
@@ -88,6 +89,11 @@ namespace HB_Local_DB
             updateOrdersGrid();
         }
 
-     
+        // New Category
+        private void categoryMenuItem_Click(object sender, EventArgs e)
+        {
+            categoryForm = new CategoryForm();
+            categoryForm.ShowDialog();
+        }
     }
 }
