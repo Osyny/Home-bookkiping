@@ -62,7 +62,7 @@ namespace HB_Local_DB
 
         public void changeOrder(int id, string categoryName, string userName, DateTime dateOrder, decimal price, string description)
         {
-            bisnesLogic.changeOrder(id, categoryName, userName, dateOrder, price, description);
+            bisnesLogic.updateOrder(id, categoryName, userName, dateOrder, price, description);
             validateLocalData();
         }
 
@@ -89,8 +89,14 @@ namespace HB_Local_DB
         // change category
         public void changeCategory(int id, string newName, bool newType)
         {
-            bisnesLogic.changeCategory(id, newName, newType);
+            bisnesLogic.updateCategory(id, newName, newType);
             validateLocalData();
+        }
+
+        public Users getUserById(int id)
+        {
+            var user = bisnesLogic.getUserById(id);
+            return user;
         }
 
         // add user
@@ -101,9 +107,9 @@ namespace HB_Local_DB
         }
 
         //CHANGE local user
-        public void changeDataCurentUser(int id, string email, string name, string pass/*, int familyId*/)
+        public void updateUser(int id, string email, string name, string pass/*, int familyId*/)
         {
-            bisnesLogic.changeCurentUser(id, email, name, pass);
+            bisnesLogic.updateUser(id, email, name, pass);
             validateLocalData();
         }
 
@@ -112,6 +118,12 @@ namespace HB_Local_DB
         {
             bisnesLogic.deleteUser(id);
             validateLocalData();
+        }
+
+        public string getFamilyName(int id)
+        {
+            var fam = bisnesLogic.getFamilyName(id).Name;
+            return fam;
         }
 
     }

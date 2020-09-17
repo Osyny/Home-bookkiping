@@ -110,7 +110,7 @@ namespace Server
 
 
 
-        public void changeOrder(int id, string categoryName, string userName, DateTime dateOrder, decimal price, string description)
+        public void updateOrder(int id, string categoryName, string userName, DateTime dateOrder, decimal price, string description)
         {
             var orderToChange = db.Orders.Where(o => o.Id == id).FirstOrDefault();
 
@@ -163,13 +163,13 @@ namespace Server
         }
 
         // Change category
-        public void changeCategory(int id, string newName, bool newType)
+        public void updateCategory(int id, string newName, bool newType)
         {
-            var categoryToChange = db.Categories.Where(c => c.Id == id).FirstOrDefault();
-            if (categoryToChange != null)
+            var categoryUpdate = db.Categories.Where(c => c.Id == id).FirstOrDefault();
+            if (categoryUpdate != null)
             {
-                categoryToChange.Name = newName;
-                categoryToChange.Type = newType;
+                categoryUpdate.Name = newName;
+                categoryUpdate.Type = newType;
 
                 db.SaveChanges();
             }
@@ -211,9 +211,14 @@ namespace Server
                 db.SaveChanges();
             }
         }
+        public Users getUserById(int id)
+        {
+            var user = db.Users.FirstOrDefault(u => u.Id == id);
+            return user;
+        }
 
         // Change my data
-        public void changeCurentUser(int id, string email, string name, string pass/*, int familyId*/)
+        public void updateUser(int id, string email, string name, string pass/*, int familyId*/)
         {
             var userToChange = db.Users.Where(c => c.Id == id).FirstOrDefault();
 

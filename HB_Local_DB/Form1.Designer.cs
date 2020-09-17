@@ -71,6 +71,7 @@
             this.usersMenuItem.Name = "usersMenuItem";
             this.usersMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usersMenuItem.Text = "Користувачі";
+            this.usersMenuItem.Click += new System.EventHandler(this.usersMenuItem_Click);
             // 
             // categoryMenuItem
             // 

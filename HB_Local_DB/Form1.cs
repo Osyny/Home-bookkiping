@@ -24,6 +24,8 @@ namespace HB_Local_DB
         Users curentUser;
         CategoryForm categoryForm;
 
+        UserForm fixUser;
+
         public Form1()
         {
             InitializeComponent();
@@ -94,6 +96,12 @@ namespace HB_Local_DB
         {
             categoryForm = new CategoryForm();
             categoryForm.ShowDialog();
+        }
+
+        private void usersMenuItem_Click(object sender, EventArgs e)
+        {
+            fixUser = new UserForm(curentUser);
+            fixUser.ShowDialog();
         }
     }
 }
