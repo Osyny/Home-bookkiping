@@ -36,7 +36,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelNewUser = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.textBoxParol = new System.Windows.Forms.TextBox();
             this.textBoxNik = new System.Windows.Forms.TextBox();
@@ -45,10 +45,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.labelNewUser = new System.Windows.Forms.Label();
             btnNew = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelNewUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNew
@@ -79,6 +80,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Видалити вибраного користувача";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dataGridUsers
             // 
@@ -125,20 +127,20 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // panel2
+            // panelNewUser
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.textBoxParol);
-            this.panel2.Controls.Add(this.textBoxNik);
-            this.panel2.Controls.Add(this.textBoxEmail);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(52, 331);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 147);
-            this.panel2.TabIndex = 4;
+            this.panelNewUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelNewUser.Controls.Add(this.btnSave);
+            this.panelNewUser.Controls.Add(this.textBoxParol);
+            this.panelNewUser.Controls.Add(this.textBoxNik);
+            this.panelNewUser.Controls.Add(this.textBoxEmail);
+            this.panelNewUser.Controls.Add(this.label4);
+            this.panelNewUser.Controls.Add(this.label3);
+            this.panelNewUser.Controls.Add(this.label2);
+            this.panelNewUser.Location = new System.Drawing.Point(59, 342);
+            this.panelNewUser.Name = "panelNewUser";
+            this.panelNewUser.Size = new System.Drawing.Size(342, 147);
+            this.panelNewUser.TabIndex = 4;
             // 
             // btnSave
             // 
@@ -200,7 +202,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(179, 495);
+            this.btnClose.Location = new System.Drawing.Point(183, 499);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 23);
             this.btnClose.TabIndex = 5;
@@ -208,13 +210,22 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // labelNewUser
+            // 
+            this.labelNewUser.AutoSize = true;
+            this.labelNewUser.Location = new System.Drawing.Point(59, 323);
+            this.labelNewUser.Name = "labelNewUser";
+            this.labelNewUser.Size = new System.Drawing.Size(0, 13);
+            this.labelNewUser.TabIndex = 6;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 534);
+            this.Controls.Add(this.labelNewUser);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelNewUser);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(btnNew);
             this.Controls.Add(this.label1);
@@ -223,8 +234,8 @@
             this.Text = "UserForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelNewUser.ResumeLayout(false);
+            this.panelNewUser.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,7 +250,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelNewUser;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox textBoxParol;
         private System.Windows.Forms.TextBox textBoxNik;
@@ -248,5 +259,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label labelNewUser;
     }
 }
