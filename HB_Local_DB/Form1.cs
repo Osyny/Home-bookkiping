@@ -23,6 +23,7 @@ namespace HB_Local_DB
 
         Users curentUser;
         CategoryForm categoryForm;
+        FormForPeriod formFromPeriod;
 
         UserForm fixUser;
 
@@ -102,6 +103,18 @@ namespace HB_Local_DB
         {
             fixUser = new UserForm(curentUser);
             fixUser.ShowDialog();
+        }
+
+        private void toolMenuItemCosts_Click(object sender, EventArgs e)
+        {
+            formFromPeriod = new FormForPeriod(false);
+            formFromPeriod.ShowDialog();
+        }
+
+        private void toolMenuItemProfit_Click(object sender, EventArgs e)
+        {
+            formFromPeriod = new FormForPeriod(true);
+            formFromPeriod.ShowDialog();
         }
     }
 }

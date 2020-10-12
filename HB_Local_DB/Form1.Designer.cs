@@ -34,6 +34,8 @@
             this.categoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.операціїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newOrdersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolMenuItemCosts = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolMenuItemProfit = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,21 +71,23 @@
             // usersMenuItem
             // 
             this.usersMenuItem.Name = "usersMenuItem";
-            this.usersMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usersMenuItem.Size = new System.Drawing.Size(141, 22);
             this.usersMenuItem.Text = "Користувачі";
             this.usersMenuItem.Click += new System.EventHandler(this.usersMenuItem_Click);
             // 
             // categoryMenuItem
             // 
             this.categoryMenuItem.Name = "categoryMenuItem";
-            this.categoryMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoryMenuItem.Size = new System.Drawing.Size(141, 22);
             this.categoryMenuItem.Text = "Категорії";
             this.categoryMenuItem.Click += new System.EventHandler(this.categoryMenuItem_Click);
             // 
             // операціїToolStripMenuItem
             // 
             this.операціїToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newOrdersMenuItem});
+            this.newOrdersMenuItem,
+            this.toolMenuItemCosts,
+            this.toolMenuItemProfit});
             this.операціїToolStripMenuItem.Name = "операціїToolStripMenuItem";
             this.операціїToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.операціїToolStripMenuItem.Text = "Операції";
@@ -91,9 +95,23 @@
             // newOrdersMenuItem
             // 
             this.newOrdersMenuItem.Name = "newOrdersMenuItem";
-            this.newOrdersMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.newOrdersMenuItem.Size = new System.Drawing.Size(181, 22);
             this.newOrdersMenuItem.Text = "Нова операція";
             this.newOrdersMenuItem.Click += new System.EventHandler(this.newOrdersMenuItem_Click);
+            // 
+            // toolMenuItemCosts
+            // 
+            this.toolMenuItemCosts.Name = "toolMenuItemCosts";
+            this.toolMenuItemCosts.Size = new System.Drawing.Size(181, 22);
+            this.toolMenuItemCosts.Text = "Витрати за період";
+            this.toolMenuItemCosts.Click += new System.EventHandler(this.toolMenuItemCosts_Click);
+            // 
+            // toolMenuItemProfit
+            // 
+            this.toolMenuItemProfit.Name = "toolMenuItemProfit";
+            this.toolMenuItemProfit.Size = new System.Drawing.Size(181, 22);
+            this.toolMenuItemProfit.Text = "Прибуток за період";
+            this.toolMenuItemProfit.Click += new System.EventHandler(this.toolMenuItemProfit_Click);
             // 
             // dataGridViewOrders
             // 
@@ -191,6 +209,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dictionary;
         private System.Windows.Forms.DataGridViewLinkColumn ColumnFix;
         private System.Windows.Forms.DataGridViewLinkColumn ColumnDelete;
+        private System.Windows.Forms.ToolStripMenuItem toolMenuItemCosts;
+        private System.Windows.Forms.ToolStripMenuItem toolMenuItemProfit;
     }
 }
 

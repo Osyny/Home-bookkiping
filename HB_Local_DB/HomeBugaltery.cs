@@ -12,6 +12,7 @@ namespace HB_Local_DB
         static private HomeBugaltery instance = null;
 
         BisnesLogic bisnesLogic;
+        private List<OrdersView> orderCostsProfit;
         List<OrdersView> listOrders;
       
         List<Categories> listCategories;
@@ -30,7 +31,7 @@ namespace HB_Local_DB
             bisnesLogic = new BisnesLogic();
 
             //filteredListOrders = new List<OrdersView>();
-            //filterOrderExpensRevenues = new List<OrdersView>();
+            orderCostsProfit = new List<OrdersView>();
 
             //usersSaldo = new List<UserSaldo>();
 
@@ -43,6 +44,8 @@ namespace HB_Local_DB
         public List<Categories> ListCategories { get { return listCategories; } }
         public List<Users> ListUsers { get { return listUsers; } }
 
+        // Filter Order for Expens, Revenues
+        public List<OrdersView> OrderCostsProfitList { get { return orderCostsProfit; } }
         //
         public void validateLocalData()
         {
@@ -120,11 +123,32 @@ namespace HB_Local_DB
             validateLocalData();
         }
 
+        public decimal applyFiltersForCostsProfit(bool type, DateTime? dateFrom = null, DateTime? dateTo = null)
+        {
+            orderCostsProfit.Clear();
+            decimal sum = 0;
+
+            foreach (OrdersView order in listOrders)
+            {
+                bool orderCategoryType = listCategories.Where(c => c.Name == order.CategoryName).FirstOrDefault().Type;
+
+                if ((dateFrom == null || order.DateOrder >= dateFrom) && (dateTo == null || order.DateOrder <= dateTo) &&
+                    (type == orderCategoryType))
+                {
+                    sum += order.Price;
+                    orderCostsProfit.Add(order);
+                }
+            }
+            return sum;
+
+        }
         public string getFamilyName(int id)
         {
             var fam = bisnesLogic.getFamilyName(id).Name;
             return fam;
         }
+
+
 
     }
 }
